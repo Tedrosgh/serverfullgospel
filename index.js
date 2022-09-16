@@ -5,6 +5,7 @@ import postRoutes from "./routes/postsRoutes.js";
 import dotenv from "dotenv";
 import userRoutes from "./routes/users.js";
 import mezmursRouter from "./routes/mezmurs.js";
+//import http from "http";
 
 const app = express();
 dotenv.config();
@@ -12,6 +13,7 @@ dotenv.config();
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
+//const PORT = http.createServer(process.env.PORT || 8000);
 const PORT = process.env.PORT || 8000;
 app.use(cors({
   origin: "http://localhost:3000",
@@ -29,9 +31,9 @@ app.use("/mezmur", mezmursRouter);
 mongoose
   .connect(process.env.CONNECTION_URL, {
     useNewUrlParser: true,
-    useCreateIndex: true,
+  //  useCreateIndex: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
+  //  useFindAndModify: false
   })
   .then(() =>
     app.listen(PORT, () =>
