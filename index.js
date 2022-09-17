@@ -23,7 +23,7 @@ app.use(cors({
 }));
 
 //http://localhost:5000/posts
-app.get("/eegk", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello World!!, That is the new idea");
 });
 
