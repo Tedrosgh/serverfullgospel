@@ -8,7 +8,7 @@ import mezmursRouter from "./routes/mezmurs.js";
 //import http from "http";
 
 const app = express();
-dotenv.config();
+dotenv.config({ path: "./config/.env" });
 
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
