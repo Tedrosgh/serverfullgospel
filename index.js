@@ -16,7 +16,10 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 //const PORT = http.createServer(process.env.PORT || 8000);
 const PORT = process.env.PORT || 8000;
 app.use(cors({
-  origin: "http://localhost:3000",
+  'Access-Contol-Allow-Origin': '*',
+  'Access-Contol-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
+  'Access-Contol-Allow-Headers': 'Content-Type, Access-Contol-Allow-Headers, x-test'
+//  origin: "http://localhost:3000",
 }));
 
 //http://localhost:5000/posts
