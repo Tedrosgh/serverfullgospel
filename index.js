@@ -8,7 +8,7 @@ import mezmursRouter from "./routes/mezmurs.js";
 //import http from "http";
 
 const app = express();
-dotenv.config({ path: "./config/.env" });
+dotenv.config();
 
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
@@ -34,9 +34,9 @@ app.use("/mezmur", mezmursRouter);
 mongoose
   .connect(process.env.CONNECTION_URL, {
     useNewUrlParser: true,
-  //  useCreateIndex: true,
+   useCreateIndex: true,
     useUnifiedTopology: true,
-  //  useFindAndModify: false
+   useFindAndModify: false
   })
   .then(() =>
     app.listen(PORT, () =>
