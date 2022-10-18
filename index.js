@@ -18,8 +18,8 @@ dotenv.config();
 
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
-app.use(express.static(path.join(__dirname, 'client/build')));
-//app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'public')));
 console.log("public", __dirname);
 
 const PORT = process.env.PORT || 8000;
