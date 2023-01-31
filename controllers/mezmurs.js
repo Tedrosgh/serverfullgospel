@@ -14,6 +14,7 @@ export const getMezmurs = async (req, res) => {
   try {
     const mezmur = await Mezmur.find();
     res.status(200).json(mezmur);
+    console.log("title" , mezmur._id);
   } catch (error) {
     res.status(404).json({ message: error });
   }
